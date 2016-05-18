@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+Usage() {
+	echo "Usage: twork folder"
+	exit
+}
+
+
+[ $# -ne 1 ] || [ ! -d $1 ] && Usage
+
+cd $1
+
+tmux new -s $1 -n main -d
+
+tmux att -t $1
+
+
