@@ -11,8 +11,10 @@ Usage() {
 
 cd $1
 
-tmux new -s $1 -n main -d
+FOLDER=$(basename $1)
 
-tmux att -t $1
+tmux new -s $FOLDER -n main -d
+
+tmux att -t $FOLDER
 
 
